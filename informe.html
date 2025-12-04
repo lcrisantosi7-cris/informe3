@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Gestión de Proyectos de TI</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuración de Tailwind para usar la fuente Inter -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f9;
+        }
+        /* Estilo para el botón flotante de integrantes */
+        .floating-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 50;
+        }
+        .info-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        /* Estilo para forzar un desplazamiento suave en la navegación */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <!-- Encabezado Fijo -->
+    <header class="bg-white shadow-md p-4 sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-extrabold text-[#003366] flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-2 text-[#cc0033]" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm-7-8a7 7 0 1114 0 7 7 0 01-14 0zm7-5a1 1 0 00-1 1v3a1 1 0 002 0V5a1 1 0 00-1-1zM9 13a1 1 0 011-1h1a1 1 0 110 2H9a1 1 0 01-1-1z" clip-rule="evenodd" />
+                </svg>
+                Gestión de Proyectos TI
+            </h1>
+            <img src="https://placehold.co/100x40/003366/ffffff?text=UCV" alt="Logo UCV" class="h-10 w-auto rounded-md">
+        </div>
+    </header>
+
+    <!-- Contenedor Principal (Dashboard) -->
+    <main class="p-4 sm:p-8 max-w-7xl mx-auto">
+        <h2 class="text-4xl font-bold text-gray-800 mb-6 mt-4">Dashboard del Informe III</h2>
+        <p class="text-gray-600 mb-10">Explora los puntos clave del informe de Gerencia de la Tecnología de la Información. Haz clic en una tarjeta para ver la sección completa.</p>
+
+        <!-- Sección de Tarjetas (Dashboard) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Tarjeta 1: Introducción -->
+            <a href="#introduccion" class="info-card bg-white p-6 rounded-xl shadow-lg border-t-4 border-t-[#cc0033] hover:border-t-4 hover:border-t-[#003366]">
+                <div class="flex items-center space-x-4">
+                    <div class="bg-red-100 p-3 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#cc0033]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800">I. Introducción</h3>
+                </div>
+                <p class="mt-4 text-gray-600 line-clamp-3">La implementación y los avances tecnológicos en Perú para la transformación digital y la complejidad inherente de los proyectos de TI.</p>
+            </a>
+
+            <!-- Tarjeta 2: Marco Teórico / Gestión de Proyectos -->
+            <a href="#gestion-ti" class="info-card bg-white p-6 rounded-xl shadow-lg border-t-4 border-t-[#003366] hover:border-t-4 hover:border-t-[#cc0033]">
+                <div class="flex items-center space-x-4">
+                    <div class="bg-blue-100 p-3 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#003366]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h4a2 2 0 012 2v2M7 7h10" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800">II. Marco Teórico</h3>
+                </div>
+                <p class="mt-4 text-gray-600 line-clamp-3">Conceptos clave, revisión de literatura (PMBOK), la Triple Restricción (Alcance, Tiempo, Costo) y la Línea Base del Proyecto.</p>
+            </a>
+
+            <!-- Tarjeta 3: Triple Restricción -->
+            <a href="#triple-restriccion" class="info-card bg-white p-6 rounded-xl shadow-lg border-t-4 border-t-[#cc0033] hover:border-t-4 hover:border-t-[#003366]">
+                <div class="flex items-center space-x-4">
+                    <div class="bg-red-100 p-3 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#cc0033]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800">La Triple Restricción</h3>
+                </div>
+                <p class="mt-4 text-gray-600 line-clamp-3">Detalle sobre Alcance, Tiempo y Costo, su interdependencia y las Restricciones Extendidas (Calidad, Riesgo, Interesados).</p>
+            </a>
+
+            <!-- Tarjeta 4: Línea Base -->
+            <a href="#linea-base" class="info-card bg-white p-6 rounded-xl shadow-lg border-t-4 border-t-[#003366] hover:border-t-4 hover:border-t-[#cc0033]">
+                <div class="flex items-center space-x-4">
+                    <div class="bg-blue-100 p-3 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#003366]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800">Línea Base del Proyecto</h3>
+                </div>
+                <p class="mt-4 text-gray-600 line-clamp-3">Herramienta de referencia para el control y seguimiento. Componentes: Alcance, Tiempo (Cronograma) y Costo (Presupuesto).</p>
+            </a>
+
+            <!-- Tarjeta 5: Análisis y Desarrollo -->
+            <a href="#analisis-desarrollo" class="info-card bg-white p-6 rounded-xl shadow-lg border-t-4 border-t-[#cc0033] hover:border-t-4 hover:border-t-[#003366]">
+                <div class="flex items-center space-x-4">
+                    <div class="bg-red-100 p-3 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#cc0033]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800">III. Análisis y Desarrollo</h3>
+                </div>
+                <p class="mt-4 text-gray-600 line-clamp-3">Rol de la línea base para control, gestión de cambios formal y aplicación del Análisis del Valor Ganado (EVM) y sus indicadores (SPI, CPI).</p>
+            </a>
+
+            <!-- Tarjeta 6: Casos Prácticos -->
+            <a href="#casos-practicos" class="info-card bg-white p-6 rounded-xl shadow-lg border-t-4 border-t-[#003366] hover:border-t-4 hover:border-t-[#cc0033]">
+                <div class="flex items-center space-x-4">
+                    <div class="bg-blue-100 p-3 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#003366]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800">IV. Casos Prácticos</h3>
+                </div>
+                <p class="mt-4 text-gray-600 line-clamp-3">Ejemplos de aplicación de la Triple Restricción y la Línea Base: Caso Hipotético (App de Inventarios) y Caso Real (Implementación de SAP en Coca-Cola FEMSA).</p>
+            </a>
+
+            <!-- Tarjeta 7: Conclusiones y Recomendaciones -->
+            <a href="#conclusiones" class="info-card bg-white p-6 rounded-xl shadow-lg border-t-4 border-t-[#cc0033] hover:border-t-4 hover:border-t-[#003366] lg:col-span-3">
+                <div class="flex items-center space-x-4">
+                    <div class="bg-red-100 p-3 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#cc0033]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800">V. Conclusiones y Recomendaciones</h3>
+                </div>
+                <p class="mt-4 text-gray-600 line-clamp-3">Puntos clave sobre la interdependencia de variables y recomendaciones para gestionar el "scope creep" y establecer líneas base firmes.</p>
+            </a>
+
+        </div>
+
+        <!-- Sección de Contenido Detallado -->
+        <div class="mt-16 space-y-12 bg-white p-8 rounded-xl shadow-2xl">
+
+            <!-- I. Introducción -->
+            <section id="introduccion" class="border-b pb-6">
+                <h2 class="text-3xl font-extrabold text-[#cc0033] mb-4">I. Introducción</h2>
+                <p class="text-gray-700">En el Perú, los Proyectos de la Tecnología de la Información (TI) se han convertido en un tema crucial para la transformación digital, impulsando la eficiencia y la competitividad empresarial. Sin embargo, su gestión presenta desafíos únicos debido a la complejidad inherente de los sistemas, la rápida evolución tecnológica y la necesidad de cumplir con las expectativas cambiantes de los usuarios.</p>
+                <p class="text-gray-700 mt-2">Este informe se enfoca en la metodología de gestión de proyectos, analizando la interacción crítica entre las variables fundamentales: alcance, tiempo y costo. Se revisan herramientas de control esenciales como la Triple Restricción y la Línea Base del Proyecto, proporcionando un marco práctico para optimizar la planificación y ejecución de iniciativas de TI, mitigando el riesgo de desviaciones.</p>
+            </section>
+
+            <!-- II. Marco Teórico y Revisión de Literatura -->
+            <section id="gestion-ti" class="border-b pb-6">
+                <h2 class="text-3xl font-extrabold text-[#003366] mb-4">II. Marco Teórico y Revisión de Literatura</h2>
+                
+                <h3 class="text-2xl font-semibold text-gray-700 mt-4">La Gestión de Proyectos de TI</h3>
+                <p class="text-gray-700">La gestión de proyectos de TI es un proceso estructurado que abarca la planificación, ejecución, control y cierre de proyectos enfocados en sistemas de información, software e infraestructura. Es inherentemente desafiante por la naturaleza intangible de los entregables y la constante necesidad de adaptarse a nuevos requisitos o tecnologías emergentes.</p>
+                <p class="text-gray-700 mt-2">El éxito se mide no solo por la entrega de un producto funcional, sino por la satisfacción de los interesados y el cumplimiento de los objetivos dentro de los límites predefinidos de sus restricciones. Los proyectos de TI están intrínsecamente ligados a los objetivos estratégicos de la organización, actuando como catalizadores de la ventaja competitiva y la eficiencia operativa.</p>
+                
+                <h3 class="text-2xl font-semibold text-gray-700 mt-6">Revisión de Literatura y Fundamentos</h3>
+                <p class="text-gray-700">La metodología de gestión se fundamenta en estándares globales como el PMBOK® Guide del Project Management Institute (PMI). Este marco define las 10 áreas de conocimiento esenciales y los grupos de procesos, destacando que la gestión eficaz de proyectos de TI requiere una comprensión profunda de la Triple Restricción como núcleo de la planificación.</p>
+                <p class="text-gray-700 mt-2">Autores como Harold Kerzner enfatizan la visión sistémica de la gestión de proyectos, donde el éxito depende de la integración de la planificación técnica (WBS, cronograma) con la gestión de los recursos y los interesados. En el contexto de TI, la definición precisa del Alcance es el punto de partida más crítico debido a la volatilidad de los requerimientos de software.</p>
+            </section>
+
+            <!-- II. 1 La Triple restricción en los proyectos TI -->
+            <section id="triple-restriccion" class="border-b pb-6">
+                <h3 class="text-2xl font-semibold text-[#cc0033] mb-4">La Triple Restricción en Proyectos TI</h3>
+                <p class="text-gray-700 mb-4">La Triple Restricción (también conocida como el Triángulo de Hierro) establece que Alcance, Tiempo y Costo están interconectados y son interdependientes. Si el equipo del proyecto decide aumentar el alcance (más funcionalidades) o reducir el tiempo (acelerar la entrega), el costo casi siempre aumentará, y viceversa.</p>
+                <ul class="space-y-3 list-disc pl-5 text-gray-700">
+                    <li><strong class="text-gray-800">Alcance:</strong> Define la totalidad de entregables, funcionalidades, y el trabajo necesario para completarlos. Un alcance mal definido o cambiante (scope creep) es la principal causa de fallos en proyectos de TI.</li>
+                    <li><strong class="text-gray-800">Tiempo:</strong> Se refiere a la programación y los plazos requeridos para completar el proyecto. Las presiones de tiempo a menudo resultan en sacrificios en la calidad o el aumento de costos (por, ejemplo, horas extras).</li>
+                    <li><strong class="text-gray-800">Costo:</strong> El presupuesto asignado, que incluye recursos humanos, hardware, software y otros gastos. El costo debe estar alineado con el tiempo y el alcance, y su control es vital para la viabilidad del proyecto.</li>
+                </ul>
+                 <!-- IMAGEN DE DIAGRAMA -->
+                 <div class="mt-6 p-4 bg-gray-50 rounded-lg text-center border border-gray-200">
+                    <img src="https://crislealblog.wordpress.com/wp-content/uploads/2016/04/grafica-calidad-1.png?w=292&h=213" alt="Diagrama de la Triple Restricción en gestión de proyectos" class="mx-auto rounded-lg">
+                    <p class="text-sm text-gray-500 mt-2">Diagrama de la interdependencia entre Alcance, Tiempo y Costo. </p>
+                </div>
+            </section>
+
+            <!-- II. 1 La línea base del proyecto -->
+            <section id="linea-base" class="border-b pb-6">
+                <h3 class="text-2xl font-semibold text-[#003366] mb-4">La Línea Base del Proyecto y sus Componentes</h3>
+                <p class="text-gray-700 mb-4">La Línea Base del Proyecto es la versión aprobada de los elementos clave del plan, establecida al inicio del proyecto. Sirve como un punto de referencia inamovible para medir el rendimiento del proyecto y determinar si hay desviaciones. Solo puede ser modificada a través de un proceso formal de control de cambios.</p>
+
+                <h4 class="text-xl font-semibold text-gray-700 mt-4">Componentes Fundamentales:</h4>
+                <p class="text-gray-700">La línea base integral está compuesta por las líneas base de sus tres componentes, asegurando una referencia consolidada para la medición del desempeño.</p>
+                <ul class="space-y-2 list-disc pl-5 text-gray-700 mt-2">
+                    <li><strong class="text-gray-800">Línea Base de Alcance:</strong> Compuesta por la Declaración del Alcance, la Estructura de Desglose del Trabajo (EDT/WBS) y el diccionario de la EDT. Documenta el trabajo a realizar y los entregables (productos, servicios o resultados) para evitar el "scope creep".</li>
+                    <li><strong class="text-gray-800">Línea Base de Tiempo (Cronograma):</strong> El cronograma aceptado, incluyendo fechas de inicio y fin para las actividades planificadas. Establece los plazos realistas y la secuencia lógica para cada fase y entregable.</li>
+                    <li><strong class="text-gray-800">Línea Base de Costo (Presupuesto):</strong> La suma de los presupuestos aprobados para todos los componentes de la EDT. Define los recursos financieros estimados y la forma en que los gastos deben ocurrir a lo largo del tiempo.</li>
+                </ul>
+
+                <h4 class="text-xl font-semibold text-gray-700 mt-6">Restricciones Extendidas</h4>
+                <p class="text-gray-700 mt-2">En la gestión moderna, el modelo se expande para incluir factores igualmente críticos, que también deben ser gestionados contra una línea base o plan de gestión:</p>
+                <ul class="space-y-2 list-disc pl-5 text-gray-700">
+                    <li><strong class="text-gray-800">Calidad:</strong> Los estándares y requisitos que deben cumplir los entregables de TI, definidos en el Plan de Gestión de Calidad.</li>
+                    <li><strong class="text-gray-800">Riesgo:</strong> La evaluación y gestión de amenazas y oportunidades que pueden impactar los objetivos del proyecto. Se gestiona a través del Registro de Riesgos.</li>
+                    <li><strong class="text-gray-800">Satisfacción del Cliente (Interesados):</strong> El objetivo final, asegurando que el producto final cumpla con las necesidades del negocio. Esto se mide a través de la gestión de expectativas.</li>
+                </ul>
+            </section>
+
+            <!-- III. Análisis y Desarrollo -->
+            <section id="analisis-desarrollo" class="border-b pb-6">
+                <h2 class="text-3xl font-extrabold text-[#cc0033] mb-4">III. Análisis y Desarrollo: Monitoreo y Control</h2>
+                
+                <h3 class="text-2xl font-semibold text-gray-700 mt-4">La Línea Base como Herramienta de Control</h3>
+                <p class="text-gray-700">La línea base es el cimiento de los procesos de monitoreo y control del proyecto. Permite medir el rendimiento real frente a lo planificado, una necesidad crítica en entornos tecnológicos volátiles. Sin la línea base, el gestor del proyecto carecería de un punto de referencia objetivo para reportar el estado y el avance del proyecto.</p>
+                
+                <h4 class="text-xl font-semibold text-gray-700 mt-4">Gestión de Cambios Formal</h4>
+                <p class="text-gray-700">La gestión de cambios es esencial: la línea base solo se actualiza tras <strong class="font-bold">cambios aprobados formalmente</strong>, lo que garantiza la integridad de los planes. Cualquier desviación no autorizada (como el *scope creep*) se identifica y corrige con base en esta referencia. El procedimiento debe incluir la solicitud, la evaluación del impacto en la Triple Restricción (usando la línea base), la aprobación por el Comité de Control de Cambios (CCC) y la posterior actualización de la línea base si el cambio es aprobado.</p>
+                
+                <h3 class="text-2xl font-semibold text-gray-700 mt-6">Análisis del Valor Ganado (EVM) y de Variaciones</h3>
+                <p class="text-gray-700 mt-2">La herramienta más común para este análisis integrado es el Análisis del Valor Ganado (EVM), que integra Alcance, Tiempo y Costo para determinar el estado de salud del proyecto. El EVM compara el trabajo planificado (Valor Planificado o PV) con el trabajo realmente completado (Valor Ganado o EV) y el costo real incurrido (Costo Real o AC).</p>
+                <p class="text-700 mt-2">El análisis de variaciones proporciona métricas predictivas y de rendimiento:</p>
+                <ul class="space-y-2 list-disc pl-5 text-gray-700 mt-4">
+                    <li><strong class="text-gray-800">Variación del Cronograma (SV = EV - PV):</strong> Mide si el proyecto está adelantado o retrasado en función del valor completado.</li>
+                    <li><strong class="text-gray-800">Índice de Desempeño del Cronograma (SPI = EV / PV):</strong> Mide la eficiencia con la que se utiliza el tiempo. Un SPI &lt; 1 indica retraso.</li>
+                    <li><strong class="text-gray-800">Variación del Costo (CV = EV - AC):</strong> Mide si el proyecto está bajo o sobre el presupuesto.</li>
+                    <li><strong class="text-gray-800">Índice de Desempeño del Costo (CPI = EV / AC):</strong> Mide la eficiencia del presupuesto. Un CPI &lt; 1 indica sobrecosto.</li>
+                </ul>
+                
+            </section>
+
+            <!-- IV. Caso Práctico o Ejemplo -->
+            <section id="casos-practicos" class="border-b pb-6">
+                <h2 class="text-3xl font-extrabold text-[#003366] mb-4">IV. Casos Prácticos</h2>
+                <p class="text-gray-700 mb-6">La aplicación correcta de la Triple Restricción y la Línea Base es visible en la mitigación de riesgos y el control de desvíos en proyectos reales y simulados.</p>
+
+                <h3 class="text-2xl font-semibold text-gray-700 mt-4">Caso Hipotético: Desarrollo de Aplicación Móvil de Inventarios</h3>
+                <p class="text-gray-700">El proyecto inicial tenía un alcance de funciones básicas y un plazo de 6 meses. Durante la ejecución, el cliente solicitó una nueva funcionalidad de integración con lectores RFID (cambio en Alcance), lo que implicó un retraso de 4 semanas (cambio en Tiempo) y una necesidad de contratación externa, provocando un <strong class="font-bold">sobrecoste de S/10,000</strong> (cambio en Costo).</p>
+                <p class="text-gray-700 mt-2">La Lección aquí es que la Línea Base original permitió cuantificar y formalizar el impacto del cambio, gestionando las expectativas del cliente y evitando que el equipo absorbiera el costo y el tiempo extra de forma informal, asegurando que se tomara una decisión informada sobre la viabilidad del nuevo alcance.</p>
+
+                <h3 class="text-2xl font-semibold text-gray-700 mt-6">Caso Real: Implementación de SAP en Coca-Cola FEMSA</h3>
+                <p class="text-gray-700">Un proyecto de integración de sistemas ERP de gran envergadura. A pesar de una planificación rigurosa, se enfrentaron problemas durante las pruebas piloto y la necesidad de ajustes significativos en los módulos de finanzas (cambio en Alcance/Tiempo). Estos ajustes extendieron el proyecto de 18 a <strong class="font-bold">24 meses</strong> e incrementaron el presupuesto en <strong class="font-bold">$5 millones</strong> (de $35M a $40M).</p>
+                <p class="text-gray-700 mt-2">La Lección es que, incluso en un proyecto masivo, la gestión de la línea base permitió a la gerencia justificar los gastos y extensiones de tiempo, demostrando que las variaciones eran el resultado de factores externos e internos que fueron gestionados proactivamente mediante el control de cambios. La documentación de la línea base fue clave para mantener la confianza de los interesados a pesar de la desviación.</p>
+            </section>
+
+            <!-- V. Conclusiones y Recomendaciones -->
+            <section id="conclusiones" class="pb-6">
+                <h2 class="text-3xl font-extrabold text-[#cc0033] mb-4">V. Conclusiones y Recomendaciones</h2>
+                <h3 class="text-2xl font-semibold text-gray-700 mt-4">Conclusiones Clave</h3>
+                <ul class="space-y-2 list-disc pl-5 text-gray-700">
+                    <li>El Alcance, Tiempo y Costo son interdependientes. Modificar uno sin ajustar formalmente los otros dos garantiza una ruptura del equilibrio y un fracaso potencial del proyecto.</li>
+                    <li>La Línea Base es el estándar crítico de comparación. Su ausencia metodológica impide medir el progreso objetivo, haciendo imposible determinar si el proyecto está adelantado o retrasado/sobrepresupuestado, y es esencial para aplicar técnicas como el EVM.</li>
+                    <li>La causa raíz del "scope creep" (expansión no controlada del alcance) es la falta de un proceso formal y disciplinado de control de cambios que utilice la línea base como referencia inicial.</li>
+                    <li>La Gestión de Interesados es tan crítica como la Triple Restricción. La Línea Base ayuda a gestionar las expectativas del cliente al formalizar qué trabajo se incluye y qué no, y a qué costo/tiempo.</li>
+                </ul>
+                <h3 class="text-2xl font-semibold text-gray-700 mt-6">Recomendaciones</h3>
+                <ul class="space-y-2 list-disc pl-5 text-gray-700">
+                    <li><strong class="text-gray-800">Gestión de Cambios Rigurosa:</strong> No aceptar modificaciones en el alcance sin un reajuste formal, documentado y aprobado de cronograma y presupuesto. Todo cambio debe pasar por un análisis de impacto.</li>
+                    <li><strong class="text-gray-800">Formalización Temprana:</strong> Establecer y firmar una Línea Base antes de comenzar la ejecución para que sirva como el único documento oficial para reportar el avance real versus lo planificado (mediante EVM).</li>
+                    <li><strong class="text-gray-800">Procedimiento Estandarizado:</strong> Instaurar un Comité de Control de Cambios (CCC) donde toda solicitud de cambio sea evaluada en términos de impacto en la Triple Restricción, documentada y formalmente aprobada o rechazada.</li>
+                    <li><strong class="text-gray-800">Uso Proactivo de EVM:</strong> Implementar y utilizar el Análisis del Valor Ganado (EVM) de forma continua para obtener indicadores objetivos (CPI y SPI) que permitan tomar acciones correctivas o preventivas a tiempo.</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <!-- Botón Flotante para Integrantes y Modal -->
+    <div class="floating-button">
+        <!-- Botón principal para abrir el modal -->
+        <button id="openModalBtn" class="bg-[#003366] text-white p-4 rounded-full shadow-2xl hover:bg-[#cc0033] transition duration-300 transform hover:scale-105">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20v-2a3 3 0 015.356-1.857M7 20h10" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 11V9a2 2 0 012-2h2a2 2 0 012 2v2M9 11h6a2 2 0 012 2v3a2 2 0 01-2 2H9a2 2 0 01-2-2v-3a2 2 0 012-2z" />
+            </svg>
+        </button>
+
+        <!-- Modal (inicialmente oculto) -->
+        <div id="integrantesModal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-center p-4">
+            <div class="bg-white rounded-xl shadow-2xl p-6 w-full max-w-sm transform transition-all duration-300">
+                <div class="flex justify-between items-center mb-4 border-b pb-2">
+                    <h4 class="text-xl font-bold text-[#003366]">Integrantes del Proyecto</h4>
+                    <button id="closeModalBtn" class="text-gray-500 hover:text-gray-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <p class="text-sm text-gray-600 mb-4">Escuela Profesional de Ingeniería de Sistemas</p>
+                <ul class="space-y-2 text-gray-700">
+                    <li class="p-2 bg-gray-100 rounded-lg">Columbos Navarro, Anderson Aldair</li>
+                    <li class="p-2 bg-gray-100 rounded-lg">Crisanto Silupu, Luis Angel</li>
+                    <li class="p-2 bg-gray-100 rounded-lg">Quevedo Domador, Arnold Jose</li>
+                    <li class="p-2 bg-gray-100 rounded-lg">Saavedra Purizaca, Luis Fernando</li>
+                    <li class="p-2 bg-gray-100 rounded-lg">Laban de la Cruz, Wuilber Santiago</li>
+                    <li class="mt-4 pt-2 border-t text-sm text-gray-500">Docente: Mg. Arancibia Cordova Euardo</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript para la funcionalidad del Modal -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const openModalBtn = document.getElementById('openModalBtn');
+            const closeModalBtn = document.getElementById('closeModalBtn');
+            const modal = document.getElementById('integrantesModal');
+
+            // Abrir el modal
+            openModalBtn.addEventListener('click', () => {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            });
+
+            // Cerrar el modal
+            closeModalBtn.addEventListener('click', () => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            });
+
+            // Cerrar el modal al hacer clic fuera del contenido
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.add('hidden');
+                    modal.classList.remove('flex');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
